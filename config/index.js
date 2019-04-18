@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    //vue提供的代理配置
+    proxyTable: {
+        '/api':{
+            //'请求‘/api’资源会跳转到当前8080端口上的路径为mock的资源'
+            target:'http://localhost:8080',
+            pathRewrite:{
+                '^/api':'/static/mock'
+            }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

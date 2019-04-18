@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class='img-title'>今日推荐</div>
-		<div class="imglist" v-for='item of imglist'>
+		<div class="imglist" v-for='item of recommendList'>
 			<img :src="item.imgUrl" alt="" class="img-src" :key='item.id'>
 			<div class="img-des">
 				<p class="des-name">{{item.title}}</p>
@@ -12,13 +12,10 @@
 	</div>
 </template>
 <script>
-import index from '../../../../static/mock/index.json'
 export default{
 	name:'ImgList',
-	data(){
-		return {
-			imglist:index.data.recommendList
-		}
+	props:{
+		recommendList:Array
 	}
 };
 </script>

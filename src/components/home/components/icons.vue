@@ -12,18 +12,21 @@
   	</swiper> 
 </template>
 <script>
-import index from '../../../../static/mock/index.json'
 export default{
 	name:'HomeIcons',
+	props:{
+		iconList:Array
+	},
 	data () {
 		return {
 			swiperOption:{},
-			imgLists:index.data.iconList
+			imgLists:null
 		}
 	},
 	computed:{
 		pages:function(){
 			const _pages=[];  
+			this.imgLists=this.iconList
 			this.imgLists.forEach(function(element,index){
 				const page=Math.floor(index/8)
 				if(!_pages[page]){

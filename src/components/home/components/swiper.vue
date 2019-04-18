@@ -1,21 +1,22 @@
 <template>
 	<swiper :options="swiperOption"> 
-    <swiper-slide v-for='item of imgList' :key='item.id' >
+    <swiper-slide v-for='item of swiperList' :key='item.id' >
 			<img class='img-swiper' :src='item.imgUrl' alt="">
     </swiper-slide> 
     <div class="swiper-pagination"  slot="pagination"></div> 
   </swiper>
 </template>
 <script>
-import index from '../../../../static/mock/index.json'
 export default{
 	name:'HomeSwiper',
+	props:{
+		swiperList:Array
+	},
 	data:function(){
 		return {
 			swiperOption:{
 				loop:true
-			},
-			imgList:index.data.swiperList
+			}
 		}
 	}
 };

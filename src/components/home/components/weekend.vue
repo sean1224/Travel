@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class='img-title'>周末去哪儿</div>
-		<div class="imglist" v-for='item of imglist' :key='item.id'>
+		<div class="imglist" v-for='item of weekendList' :key='item.id'>
 			<img :src="item.imgUrl" alt="" class="img-src">
 			<div class="img-des">
 				<p class="des-name">{{item.title}}</p> 
@@ -10,14 +10,11 @@
 		</div>		
 	</div>
 </template>
-<script>
-import index from '../../../../static/mock/index.json'
+<script> 
 export default{
 	name:'HomeWeekend',
-	data(){
-		return {
-			imglist:index.data.weekendList
-		}
+	props:{
+		weekendList:Array
 	}
 };
 </script>
