@@ -4,7 +4,7 @@
 			<span class="iconfont icon-back">&#58916;</span>
 		</div> 
 		<div class="center">
-			<span class="iconfont icon-search">&#xe632;</span>
+			<span class="iconfont icon-search">&#58930;</span>
 			<input type="text" class='search' placeholder="输入地址" /> 
 		</div>
 		<div class="right"><span class="iconfont">&#58886;</span>三亚</div>		
@@ -35,7 +35,17 @@
 	.center
 		flex 1
 		height .64rem
+		position relative
 		margin-top .12rem 
 		background-color #fff
 		border-radius .1rem
+		span
+	    position: absolute;
+	    left: .1rem;
+	    top: -.08rem;
+	    font-size: .4rem;
+	  input 
+	    position: absolute;
+	    left: 0.6rem;
+	    top: .12rem;
 </style>

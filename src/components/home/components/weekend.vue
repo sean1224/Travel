@@ -1,11 +1,10 @@
 <template>
 	<div>
-		<div class='img-title'>今日推荐</div>
-		<div class="imglist" v-for='item of imglist'>
-			<img :src="item.imgUrl" alt="" class="img-src" :key='item.id'>
+		<div class='img-title'>周末去哪儿</div>
+		<div class="imglist" v-for='item of imglist' :key='item.id'>
+			<img :src="item.imgUrl" alt="" class="img-src">
 			<div class="img-des">
-				<p class="des-name">{{item.title}}</p>
-				<p class="des-price">$100</p>
+				<p class="des-name">{{item.title}}</p> 
 				<p class="des-location">{{item.desc}}</p>
 			</div>
 		</div>		
@@ -14,10 +13,10 @@
 <script>
 import index from '../../../../static/mock/index.json'
 export default{
-	name:'ImgList',
+	name:'HomeWeekend',
 	data(){
 		return {
-			imglist:index.data.recommendList
+			imglist:index.data.weekendList
 		}
 	}
 };
@@ -29,17 +28,14 @@ export default{
 	.imglist
 		display flex
 		flex-wrap wrap
-		height 100px
-		width 100%
-		padding .2rem 0
-		margin-left: .4rem;
+		height auto
 		.img-src
-			height 100px
-			width 100px
+			height 45%
+			width 100%
 		.img-des
-			margin-left: .2rem;
+			margin .1rem .2rem
+			margin-bottom: .2rem;
 			.des-name,.des-price,.des-location
-				margin-top: .22rem;
 				font-size: .24rem;
 				line-height: .4rem;
 </style>

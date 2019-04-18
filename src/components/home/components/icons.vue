@@ -2,9 +2,9 @@
 	  <swiper :options="swiperOption"> 
 	    <swiper-slide v-for="(item,index) of pages" :key="index">
 		  	<div class="icon-container">
-					<div class="icon" v-for="item of pages[index]">
-						<img :src="item.imgUrl" class='icon-img' alt="" :key='item.id'>
-						<p class="icon-des">{{item.imgDes}}</p>
+					<div class="icon" v-for="item of pages[index]" :key='item.id'>
+						<img :src="item.imgUrl" class='icon-img' alt="">
+						<p class="icon-des">{{item.desc}}</p>
 					</div> 	  		
 		  	</div>
 	    </swiper-slide> 
@@ -56,7 +56,7 @@ export default{
 				height auto
 				margin .1rem auto
 			.icon-des
-				line-height .1rem
-				font-size .27em
+				line-height .3rem
+				font-size .8em
 
 </style>
