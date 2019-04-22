@@ -7,7 +7,11 @@
 			<span class="iconfont icon-search">&#58930;</span>
 			<input type="text" class='search' placeholder="输入地址" /> 
 		</div>
-		<div class="right"><span class="iconfont">&#58886;</span>三亚</div>		
+		<router-link to='/city'>
+			<div class="right"> 
+					<span class="iconfont">&#58886;</span>三亚 
+			</div>		
+		</router-link> 
 	</div>	
 </template>	
 
@@ -17,7 +21,7 @@
 	};
 </script>
 
-<style lang='stylus' scoped> 
+<style lang='stylus' scoped>
 .header
 	display flex
 	line-height .86rem
@@ -32,6 +36,7 @@
 		width 1.24rem
 		float right
 		text-align center
+		color #000
 	.center
 		flex 1
 		height .64rem
@@ -40,12 +45,12 @@
 		background-color #fff
 		border-radius .1rem
 		span
-	    position: absolute;
-	    left: .1rem;
-	    top: -.08rem;
-	    font-size: .4rem;
-	  input 
-	    position: absolute;
-	    left: 0.6rem;
-	    top: .12rem;
+			position: absolute;
+			left: .1rem;
+			top: -.08rem;
+			font-size: .4rem;
+		input
+			position: absolute;
+			left: .6rem;
+			top: .12rem;
 </style>
