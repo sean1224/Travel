@@ -33,14 +33,28 @@ export default{
 		top: -.08rem;
 		font-size: .4rem;
 		color: #000;
+	.title-des
+		font-size:.36rem;
 .search
+	position: relative;
 	background: #00bcd4;
 	text-align: center;
+	width: 100%;
+	padding: 0 .3rem;
+	box-sizing: border-box;
+	span
+		position: absolute;
+		left: .38rem;
+		top: .3rem;
+		font-size: .35rem;
 	input
-		width: 80%;
-		padding: 0 .1rem;
+		width: 100%;
 		margin: .2rem auto;
+		padding: 0 .5rem;
+		box-sizing: border-box;
 		font-size: .4rem;
 		border: none;
 		border-radius:.1rem;
+		font-size: .35rem;
+		color: #333;
 </style>
