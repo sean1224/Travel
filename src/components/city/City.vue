@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<city-header></city-header>
-		<city-list :hotCities='hotCities' :cities='cities'></city-list>
+		<city-list :hotCities='hotCities' :cities='cities' :letter='letter'></city-list>
 		<city-alphabet :cities='cities' @change='itemClick'></city-alphabet>
 	</div>
 </template>
@@ -16,7 +16,8 @@ export default{
 	data(){
 		return {
 			cities:{},
-			hotCities:[]
+			hotCities:[],
+			letter:''
 		}
 	},
 	methods:{
@@ -32,7 +33,7 @@ export default{
 			}
 		},
 		itemClick (res) {
-			alert(res);
+			this.letter=res;
 		}
 	},
 	mounted () {

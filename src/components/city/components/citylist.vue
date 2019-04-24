@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div ref="wrapper">
 		<p class="title">
 			热门城市
 		</p>
@@ -12,7 +12,7 @@
 			列表
 		</p>
 		<div class="listContainer" v-for='(value,key) in cities'>
-			<p class="alpha border-bottom">{{key}}</p>
+			<p class="alpha border-bottom" :ref='key'>{{key}}</p>
 			<div v-for='item of value' class='border-bottom' :key='item.id'>
 				{{item.name}}
 			</div>
@@ -20,11 +20,24 @@
 	</div>
 </template>
 <script>
+import bscroll from 'better-scroll'
 export default{
 	name:'CityList', 
 	props:{
 		hotCities:Array,
-		cities:Object
+		cities:Object,
+		letter:String
+	},
+	watch:{
+		letter () {
+			if(this.letter){
+					let element = this.$refs[this.letter][0];
+					this.scroll.scrollToElement(element); 						
+			}
+		}
+	},
+	mounted () {
+		this.scroll = new bscroll(this.$refs.wrapper);
 	}
 };
 </script>
