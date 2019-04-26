@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<city-header></city-header>
+		<city-header :cities='cities'></city-header>
 		<city-list :hotCities='hotCities' :cities='cities' :letter='letter'></city-list>
 		<city-alphabet :cities='cities' @change='itemClick'></city-alphabet>
 	</div>
