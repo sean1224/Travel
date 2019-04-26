@@ -56,8 +56,8 @@ export default{
       }
     },
     handleTouchEnd () {
-      this.touchStatus = false
-    }
+      this.touchStatus = false;
+    } 
 	}
 };
 </script>
