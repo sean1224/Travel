@@ -9,16 +9,16 @@
 		</div>
 		<router-link to='/city'>
 			<div class="right"> 
-					<span class="iconfont">&#58886;</span>三亚 
+					<span class="iconfont">&#58886;</span>{{this.$store.state.city}}
 			</div>		
 		</router-link> 
 	</div>	
 </template>	
 
 <script>
-	export default {
-		name:'HomeHeader'
-	};
+export default {
+	name:'HomeHeader'
+};
 </script>
 
 <style lang='stylus' scoped>

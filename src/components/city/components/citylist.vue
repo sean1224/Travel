@@ -4,7 +4,10 @@
 			热门城市
 		</p>
 		<div class="itemContainer">
-			<div class="item" v-for='item in hotCities' :key='item.id'>
+			<div class="item" 
+				v-for='item in hotCities' 
+				:key='item.id'
+				@click='itemClick(item.name)'>
 				{{item.name}}
 			</div> 
 		</div> 
@@ -27,6 +30,11 @@ export default{
 		hotCities:Array,
 		cities:Object,
 		letter:String
+	},
+	methods:{
+		itemClick (city) {
+			this.$store.commit("changeCity",city);
+		}
 	},
 	watch:{
 		letter () {
