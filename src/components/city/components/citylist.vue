@@ -16,8 +16,11 @@
 		</p>
 		<div class="listContainer" v-for='(value,key) in cities'>
 			<p class="alpha border-bottom" :ref='key'>{{key}}</p>
-			<div v-for='item of value' class='border-bottom' :key='item.id'>
-				{{item.name}}
+			<div v-for='item of value' 
+				class='border-bottom' 
+				:key='item.id' 
+				@click='itemClick(item.name)'>
+					{{item.name}}
 			</div>
 		</div> 
 	</div>
@@ -34,6 +37,7 @@ export default{
 	methods:{
 		itemClick (city) {
 			this.$store.commit("changeCity",city);
+			this.$router.push('/');
 		}
 	},
 	watch:{
