@@ -3,11 +3,11 @@
 		<div class='img-title'>今日推荐</div>
 		<div class="imglist" v-for='item of recommendList'>
 			<img :src="item.imgUrl" alt="" class="img-src" :key='item.id'>
-			<div class="img-des">
+			<router-link :to="'/detail/'+item.id" tag='div' class="img-des">
 				<p class="des-name">{{item.title}}</p>
 				<p class="des-price">$100</p>
 				<p class="des-location">{{item.desc}}</p>
-			</div>
+			</router-link>
 		</div>		
 	</div>
 </template>
